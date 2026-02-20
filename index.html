@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gatinho Aventureiro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="topbar">
+        <h1>🐾 Gatinho Aventureiro</h1>
+      </header>
+
+      <section id="startScreen" class="overlay active">
+        <div class="panel">
+          <h2>Bem-vindo!</h2>
+          <p>Ajude o gatinho a atravessar 3 mundos fofinhos e derrotar os chefes.</p>
+          <p><small>Como executar: abra o arquivo <code>index.html</code> no Chrome/Edge.</small></p>
+          <ul>
+            <li><strong>A</strong> = esquerda</li>
+            <li><strong>D</strong> = direita</li>
+            <li><strong>W</strong> = pular</li>
+            <li><strong>S</strong> = abaixar</li>
+          </ul>
+          <button id="playBtn">Jogar</button>
+        </div>
+      </section>
+
+      <section id="gameOverScreen" class="overlay">
+        <div class="panel">
+          <h2>Game Over</h2>
+          <p>O gatinho precisa de outra chance!</p>
+          <button id="retryBtn">Tentar novamente</button>
+        </div>
+      </section>
+
+      <section id="winScreen" class="overlay">
+        <div class="panel">
+          <h2>Parabéns! 🎉</h2>
+          <p>Você ajudou o gatinho a salvar todos os mundos!</p>
+          <button id="restartBtn">Reiniciar</button>
+        </div>
+      </section>
+
+      <section class="hud" id="hud">
+        <div class="hud-row">
+          <div><strong>Fase:</strong> <span id="phaseLabel">1 - Jardim</span></div>
+          <div><strong>Vida:</strong> <span id="hearts">❤️❤️❤️</span></div>
+        </div>
+        <div id="bossBarWrap" class="boss-bar-wrap hidden">
+          <span>Energia do Chefe</span>
+          <div class="boss-bar">
+            <div id="bossBarFill" class="boss-bar-fill"></div>
+          </div>
+        </div>
+        <div class="controls-tip">Dica: pule/abaixe para desviar e acerte o chefe com pulo por cima.</div>
+      </section>
+
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Jogo de plataforma do gatinho"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
